@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sighting Detail</title>
+</head>
+<body>
+    <h1>Edit Sightings</h1>
+    <form action="" method="post" >
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+            {% if field.help_text %}
+            <p class="help">{{ field.help_text|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        <input type="submit" value="Update" />
+</body>
+</html>
