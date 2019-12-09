@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sightings</title>
+</head>
+<body>
+    <h1>List Sightings</h1>
+    <div>
+        <span>Click to <a href="{% url 'add' %}">add</a> a sighting record.</span>
+        <ul>
+            {% for sighting in sightings %}
+            <li><a href="{% url 'detail' sighting.unique_squirrel_id %}">{{ sighting.unique_squirrel_id }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
